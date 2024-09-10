@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import './style2.css'; 
 import { useNavigate } from 'react-router-dom';
 
-function Cart1() {
+function Cart() {
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
 
@@ -114,4 +114,4 @@ function Cart1() {
 };
 
 
-export default Cart1;
+export default Cart;

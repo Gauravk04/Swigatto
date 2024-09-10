@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import  './LoginSignup.css';
+import { BASE_URL } from '../config/const';
+import {useNavigate} from "react-router-dom"
 
 
 function Loginsignup()  {
 
   const [state,setState]=useState("Login");
+  let navigate=useNavigate();
+
 
   const [formData,setFormData]=useState({
     username:"",
@@ -33,12 +37,12 @@ function Loginsignup()  {
   };
 
 
-
+console.log("base url " , BASE_URL)
   const login=async()=>{
     if (!validateForm()) return;
       console.log("Login Function Executed",formData);
       let responseData;
-      await fetch('http://localhost:4000/login', {
+      await fetch(`${BASE_URL}/login`, {
         method: 'POST',
         headers: {
           Accept: 'application/form-data',
@@ -48,7 +52,7 @@ function Loginsignup()  {
       }).then((response) => response.json()).then((data) =>responseData = data)
           if (responseData.success) {
             localStorage.setItem('auth-token', responseData.token);
-            window.location.replace("/project/index1");
+            navigate("/home");
           }
           else{
             alert(responseData.error)
@@ -59,8 +63,8 @@ function Loginsignup()  {
     if (!validateForm()) return;
     console.log("SignUp Function Executed", formData);
     let responseData;
-    await fetch('http://localhost:4000/signup', {
-      method: 'POST',
+    await fetch(`${BASE_URL}/signup`, {
+      method: 'POST', 
       headers: {
         Accept: 'application/form-data',
         'Content-Type': 'application/json',
@@ -69,7 +73,7 @@ function Loginsignup()  {
     }).then((response) => response.json()).then((data) =>responseData = data)
         if (responseData.success) {
           localStorage.setItem('auth-token', responseData.token);
-          window.location.replace("/project/index1");
+          navigate("/home");
         }
         else{
           alert(responseData.error)

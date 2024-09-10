@@ -5,12 +5,12 @@ import './style.css';
 import { Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.css';
 
-function Index1() {
+function Index() {
   const navigate = useNavigate();
   useEffect(() => {
     const handleBackNavigation = (e) => {
       e.preventDefault();
-      navigate('/project/index1');
+      navigate('/index');
     };
 
     window.history.pushState(null, document.title, window.location.href);
@@ -842,4 +842,4 @@ const [priceInput, setPriceInput] = React.useState(0);
   );
 }
 
-export default Index1;
+export default Index;

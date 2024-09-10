@@ -97,16 +97,24 @@ class SwiggatoApp extends React.Component {
                 <option value="3">Mumbai</option>
                 <option value="5">Pune</option>
               </select>
-              <a id="search" href='/project/LoginSignup'>
+             
                 <button
-                  disabled
+                  // disabled
                   id="search-button"
                   className="search-bar1 search-submit1"
-                  type="submit"
+                  onClick={()=> {
+                    
+                    console.log("i am getting clicked")
+                    window.location.href  = "/index"
+                  
+                  
+                  }
+                  
+                  }
                 >
                   Find Food
                 </button>
-              </a>
+              
             </div>
 
             <div className=" cities1 ">
