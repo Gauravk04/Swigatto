@@ -115,12 +115,10 @@ const SwiggatoApp = () => {
               <option value="5">Pune</option>
             </select>
             <button
-              // disabled
               id="search-button"
               className="search-bar1 search-submit1"
               onClick={() => {
-                console.log("i am getting clicked");
-                window.location.href = "/index";
+                window.location.href = "/Index";
               }}
             >
               Find Food
