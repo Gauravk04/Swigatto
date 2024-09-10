@@ -11,7 +11,7 @@ function Loginsignup() {
         name: "",
         password: "",
         email: "",
-        number: "" // 
+        number: "" 
     });
 
     const [errors, setErrors] = useState({}); 
@@ -30,7 +30,7 @@ function Loginsignup() {
     if (!validateForm()) return;
     console.log("Login Function Executed", formData);
     let responseData;
-    await fetch('https://clippic.onrender.com/login', {
+    await fetch('https://swigatto.onrender.com/login', {
       method: 'POST',
       headers: {
         Accept: 'application/form-data',
@@ -53,7 +53,7 @@ function Loginsignup() {
     if (!validateForm()) return;
     console.log("SignUp Function Executed", formData);
     let responseData;
-    await fetch('https://clippic.onrender.com/signup', {
+    await fetch('https://swigatto.onrender.com/signup', {
       method: 'POST',
       headers: {
         Accept: 'application/form-data',
