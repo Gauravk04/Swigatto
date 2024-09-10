@@ -1,6 +1,6 @@
 import React from 'react';
 import './style1.css';
-import ReactTyped from "react-typed";
+import { ReactTyped } from 'react-typed';
 import ios from './home_images/iOS.webp';
 import logo1 from './home_images/logo1.jpg';
 import order from './home_images/order.png'

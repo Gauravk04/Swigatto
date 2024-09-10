@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "./login";
+import Login from "./loginSignup";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signup from "./Signup";
 import SwiggatoApp from "./project/home";
@@ -12,13 +12,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path='/login' element={<Login />} />
-        <Route path='/project/index1' element={<Index1 />} />
+        <Route path='/' element={<Login />}/>
+        <Route path='/home' element={<Index1 />} />
         <Route path='/project/cart' element={<Cart1 />} />
         <Route path='/project/payment' element={<PaymentForm />} />
-        <Route path='/' element={<SwiggatoApp />} />
+        {/* <Route path='/' element={<SwiggatoApp />} />
         <Route path='signup/' element={<Signup />} />
-        <Route path='/project/LoginSignup' element={<Loginsignup />} />
+        <Route path='/project/LoginSignup' element={<Loginsignup />} /> */}
         
       </Routes>
     </BrowserRouter>

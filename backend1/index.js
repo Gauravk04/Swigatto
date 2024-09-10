@@ -2,15 +2,18 @@ const port=4000;
 
 const express=require("express");
 const app=express();
+const bodyParser = require("body-parser");
 const mongoose=require("mongoose");
 const jwt=require("jsonwebtoken");
 const path=require("path");
 const cors=require("cors");
 
 app.use(express.json());
-app.use(cors({
-    origin: 'http://localhost:3002',
-  }));
+app.use(bodyParser.json());
+app.use(cors());
+// app.use(cors({
+//     origin: 'http://localhost:3002',
+//   }));
   
 
 //Datatabse cnncn with monodb
@@ -73,8 +76,8 @@ app.post('/signup',async(req,res)=>{
     }
 
     const token = jwt.sign(data,'secret_ecom');
-    res.json({success:true,token})
-})
+    res.json({success:true,token});
+});
 
 //creating endpoint for user login
 
