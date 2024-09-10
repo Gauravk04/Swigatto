@@ -27,6 +27,7 @@ function Loginsignup() {
         return Object.keys(validationErrors).every((key) => validationErrors[key] === "");
     };
   const login = async () => {
+    try{
     if (!validateForm()) return;
     console.log("Login Function Executed", formData);
     let responseData;
@@ -47,9 +48,14 @@ function Loginsignup() {
     } else {
       alert(responseData.error);
     }
+  }
+  catch (error) {
+    console.error('Fetch error in login:', error);
+  }
   };
 
   const signup = async () => {
+    try{
     if (!validateForm()) return;
     console.log("SignUp Function Executed", formData);
     let responseData;
@@ -69,6 +75,10 @@ function Loginsignup() {
       navigate("/home");
     } else {
       alert(responseData.error);
+    }
+    }
+    catch (error) {
+      console.error('Fetch error in login:', error);
     }
   };
 
